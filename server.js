@@ -89,7 +89,7 @@ app.get('/api/health', (req, res) => {
     res.json({ 
         status: 'OK', 
         timestamp: new Date().toISOString(),
-        service: '日本語→英語翻訳API'
+        service: 'カジュアルな日本語→英語翻訳API'
     });
 });
 
@@ -113,7 +113,7 @@ app.use((error, req, res, next) => {
 
 // サーバー起動
 app.listen(PORT, () => {
-    console.log(`🚀 翻訳アプリサーバーがポート ${PORT} で起動しました`);
+    console.log(`🚀 カジュアル翻訳アプリのサーバーがポート ${PORT} で起動しました`);
     console.log(`📝 API エンドポイント: http://localhost:${PORT}/api/translate`);
     console.log(`💊 ヘルスチェック: http://localhost:${PORT}/api/health`);
     

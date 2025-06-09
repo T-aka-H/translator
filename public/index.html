@@ -127,7 +127,7 @@
             border-left-color: #333;
         }
         
-        .student-card {
+        .casual-card {
             border-left-color: #666;
         }
         
@@ -215,7 +215,7 @@
     <div class="container">
         <div class="header">
             <h1>日本語→英語 3パターン翻訳</h1>
-            <p>ビジネス・学生・格調高い英語の3つのスタイルで翻訳します</p>
+            <p>ビジネス・カジュアル・格調高い英語の3つのスタイルで翻訳します</p>
         </div>
         
         <div class="input-section">
@@ -242,12 +242,12 @@
                 <div id="businessExplanation" class="explanation"></div>
             </div>
             
-            <div class="translation-card student-card">
+            <div class="translation-card casual-card">
                 <div class="card-header">
-                    <div class="card-title">学生向け</div>
+                    <div class="card-title">カジュアル</div>
                 </div>
-                <div id="studentTranslation" class="translation-text"></div>
-                <div id="studentExplanation" class="explanation"></div>
+                <div id="casualTranslation" class="translation-text"></div>
+                <div id="casualExplanation" class="explanation"></div>
             </div>
             
             <div class="translation-card formal-card">
@@ -288,9 +288,9 @@
 翻訳: [ビジネス場面で使用される、フォーマルで実用的な英語翻訳]
 解説: [なぜこの表現がビジネス向けなのか、使用されている単語や文法構造について日本語で詳しく説明]
 
-【学生向け】
-翻訳: [学生が日常会話や学校で使いやすい、親しみやすい英語翻訳]
-解説: [なぜこの表現が学生向けなのか、使用されている単語や文法構造について日本語で詳しく説明]
+【カジュアル】
+翻訳: [友人との会話や普段使いに適した、親しみやすい英語翻訳]
+解説: [なぜこの表現がカジュアルなのか、使用されている単語や文法構造について日本語で詳しく説明]
 
 【格調高い英語】
 翻訳: [文学的で洗練された、格調の高い英語翻訳]
@@ -334,7 +334,7 @@
         function parseAndDisplayResults(text) {
             // 結果をパースして表示
             const businessMatch = text.match(/【ビジネスマン向け】\s*翻訳:\s*(.*?)\s*解説:\s*(.*?)(?=【|$)/s);
-            const studentMatch = text.match(/【学生向け】\s*翻訳:\s*(.*?)\s*解説:\s*(.*?)(?=【|$)/s);
+            const casualMatch = text.match(/【カジュアル】\s*翻訳:\s*(.*?)\s*解説:\s*(.*?)(?=【|$)/s);
             const formalMatch = text.match(/【格調高い英語】\s*翻訳:\s*(.*?)\s*解説:\s*(.*?)(?=【|$)/s);
             
             if (businessMatch) {
@@ -342,9 +342,9 @@
                 document.getElementById('businessExplanation').textContent = businessMatch[2].trim();
             }
             
-            if (studentMatch) {
-                document.getElementById('studentTranslation').textContent = studentMatch[1].trim();
-                document.getElementById('studentExplanation').textContent = studentMatch[2].trim();
+            if (casualMatch) {
+                document.getElementById('casualTranslation').textContent = casualMatch[1].trim();
+                document.getElementById('casualExplanation').textContent = casualMatch[2].trim();
             }
             
             if (formalMatch) {
