@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: japanese-english-translator
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: GEMINI_API_KEY
+        sync: false # 環境変数パネルで手動設定
